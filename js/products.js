@@ -1,23 +1,23 @@
 var categoriesArray = [];
 
-function showCategoriesList(array){
+function productsList(array){
 
     let htmlContentToAppend = "";
     for(let i = 0; i < array.length; i++){
-        let category = array[i];
-        console.log(category);
+        let product = array[i];
+        console.log(product);
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
-                    <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
+                    <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ category.name +`</h4>
-                        <small class="text-muted">` + category.currency + ' ' + category.cost + `</small>
+                        <h4 class="mb-1">`+ product.name +`</h4>
+                        <small class="text-muted">` + product.currency + ' ' + product.cost + `</small>
                     </div>
-                    <div class="text-muted"> <h5>` + category.description + `</h5></div>
+                    <div class="text-muted"> <h5>` + product.description + `</h5></div>
                 </div>
                 
             </div>
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             categoriesArray = resultObj.data;
             //Muestro las categorías ordenadas
             
-            showCategoriesList(categoriesArray);
+            productsList(categoriesArray);
             
         }
         
