@@ -1,12 +1,13 @@
-var categoriesArray = [];
-
-function productsList(array){
-
-    let htmlContentToAppend = "";
-    for(let i = 0; i < array.length; i++){
-        let product = array[i];
-        console.log(product);
-        htmlContentToAppend += `
+document.addEventListener("DOMContentLoaded", function (e) {
+    
+    fetch(PRODUCTS_URL)
+        .then(response => response.json())
+        .then(data => {
+            let htmlContentToAppend = "";
+            for (let i = 0; i < data.length; i++) {
+                let product = data[i];
+                console.log(product);
+                htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
@@ -14,7 +15,7 @@ function productsList(array){
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ product.name +`</h4>
+                        <h4 class="mb-1">`+ product.name + `</h4>
                         <small class="text-muted">` + product.currency + ' ' + product.cost + `</small>
                     </div>
                     <div class="text-muted"> <h5>` + product.description + `</h5></div>
@@ -23,24 +24,7 @@ function productsList(array){
             </div>
         </div>
         `
-        document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
-    }
-}
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
-    
-    getJSONData(PRODUCTS_URL).then(function(resultObj){
-        
-        if (resultObj.status === "ok")
-        {
-            categoriesArray = resultObj.data;
-            //Muestro las categorías ordenadas
-            
-            productsList(categoriesArray);
-            
-        }
-        
-    });
+                document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
+            };
+        });
 });
