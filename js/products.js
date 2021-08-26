@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (e) {
-    
+    // const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json";
     fetch(PRODUCTS_URL)
         .then(response => response.json())
         .then(data => {
