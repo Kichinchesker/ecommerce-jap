@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                         <small class="text-muted">` + product.currency + ' ' + product.cost + `</small>
                     </div>
                     <div class="text-muted"> <h5>` + product.description + `</h5></div>
+                    <div class="text-muted"> <h5> Vendidos: ` + product.soldCount + `</h5></div>
                 </div>
                 
             </div>
