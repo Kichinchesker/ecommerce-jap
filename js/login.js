@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     
     document.getElementById("signIn").onclick = function(e) {
         sessionStorage.setItem('key', document.getElementById("usuario").value);
+        // Punto 3 Entrega 2
     }
 
 });

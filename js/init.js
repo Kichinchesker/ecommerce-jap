@@ -46,4 +46,5 @@ var getJSONData = function(url){
 document.addEventListener("DOMContentLoaded", function(e){
   let userName = sessionStorage.getItem('key');
   document.getElementById("printUser").innerHTML = userName;
+  // Punto 3 Entrega 2
 });

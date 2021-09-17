@@ -1,10 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (e) {
     // const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json";
 
-    var min = '';
-    var max = '';
-
-
     fetch(PRODUCTS_URL)
         .then(response => response.json())
         .then(data => {
@@ -13,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 let product = data[i];
                 console.log(product);
                 htmlContentToAppend += `
-        <div class="list-group-item list-group-item-action">
+        <a href = " product-info.html" class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
                     <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
@@ -28,11 +24,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 </div>
                 
             </div>
-        </div>
+        </a>
         `
                 document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
             };
 
+            // Adicional punto 1 entrega 2
             document.getElementById("clearRangeFilter").onclick = function () {
                 document.getElementById("rangeFilterCountMin").value = "";
                 document.getElementById("rangeFilterCountMax").value = "";
@@ -41,6 +38,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
         });
 
 
+    // Punto 1 Entrega 2
+    var min = '';
+    var max = '';
 
     function articulosFiltrados() {
 
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                     if (((min == '') || (min != '' && product.cost >= min)) &&
                         ((max == '') || (max != '' && product.cost <= max))) {
                         artFiltrado += `
-                <div class="list-group-item list-group-item-action">
+                        <a href = " product-info.html" class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
                     <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 </div>
                 
             </div>
-        </div>
+        </a>
         `
                         document.getElementById("cat-list-container").innerHTML = artFiltrado;
                     }
@@ -84,13 +84,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
     };
 
     // Punto 2 Entrega 2
-    
+
     function listaAsc() {
 
         fetch(PRODUCTS_URL)
             .then(response => response.json())
             .then(data => {
-                data.sort(function(precio1, precio2) {
+                data.sort(function (precio1, precio2) {
                     return precio1.cost - precio2.cost;
                 });
                 let listaPrecioAsc = "";
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                     let product = data[i];
                     console.log(product);
                     listaPrecioAsc += `
-    <div class="list-group-item list-group-item-action">
+                    <a href = " product-info.html" class="list-group-item list-group-item-action">
         <div class="row">
             <div class="col-3">
                 <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             </div>
             
         </div>
-    </div>
+    </a>
     `
                     document.getElementById("cat-list-container").innerHTML = listaPrecioAsc;
                 }
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         fetch(PRODUCTS_URL)
             .then(response => response.json())
             .then(data => {
-                data.sort(function(precio1, precio2) {
+                data.sort(function (precio1, precio2) {
                     return precio2.cost - precio1.cost;
                 });
                 let listaPrecioDesc = "";
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                     let product = data[i];
                     console.log(product);
                     listaPrecioDesc += `
-    <div class="list-group-item list-group-item-action">
+                    <a href = " product-info.html" class="list-group-item list-group-item-action">
         <div class="row">
             <div class="col-3">
                 <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             </div>
             
         </div>
-    </div>
+    </a>
     `
                     document.getElementById("cat-list-container").innerHTML = listaPrecioDesc;
                 }
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         fetch(PRODUCTS_URL)
             .then(response => response.json())
             .then(data => {
-                data.sort(function(vendido1, vendido2) {
+                data.sort(function (vendido1, vendido2) {
                     return vendido2.soldCount - vendido1.soldCount;
                 });
                 let listaRelev = "";
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                     let product = data[i];
                     console.log(product);
                     listaRelev += `
-    <div class="list-group-item list-group-item-action">
+                    <a href = " product-info.html" class="list-group-item list-group-item-action">
         <div class="row">
             <div class="col-3">
                 <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             </div>
             
         </div>
-    </div>
+    </a>
     `
                     document.getElementById("cat-list-container").innerHTML = listaRelev;
                 }
