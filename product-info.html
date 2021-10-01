@@ -22,8 +22,19 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a href="" class="py-2 d-none d-md-inline-block" id="printUser" style="color: yellow;"></a>
+      <!-- <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a> -->
+      <!-- <a href="" class="py-2 d-none d-md-inline-block" id="printUser" style="color: yellow;"></a> -->
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="printUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <a class="dropdown-item" id="deleteUser" href="index.html">Cerrar sesión</a>
+        </div>
+      </div>
     </div>
   </nav>
   <!-- <div class="container p-5">
@@ -88,42 +99,62 @@
           </div>
         </dd>
       </dl>
-      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
-    </div>
-    <br>
-    <br>
-    <div class="text-center p-4" id="commit">
-      <h3><b>Opiniones sobre el producto</b>
-        <h3>
-    </div>
-    <br>
-    <br>
-    <div class="container">
-      <div class="text-center p-4">
-        <h2>Puedes dejar tu comentario respecto al producto aquí:</h2>
-      </div>
-      <div class="row justify-content-md-center">
-        <div class="col-md-8 order-md-1">
-          <form class="needs-validation">
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <input type="text" class="form-control" placeholder="comentario" value="">
-              </div>
+
+      <!-- Punto 1 entrega 3 -->
+
+      <!-- punto 1 entrega 4 -->
+
+      <div class="container">
+        <div class="row">
+          <h2>Productos relacionados</h2>
+            <div class="list-group" id="relatedProducts">
             </div>
-            <br>
-            <select name="puntaje">
-              <option value="0" selected disabled hidden>Selecciona un puntaje</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-            <br>
-            <br>
-            <button class="btn btn-primary btn-lg" type="submit">Enviar</button>
-          </form>
         </div>
+    </div>
+    <br>
+    <br>
+        <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+      </div>
+      <br>
+      <br>
+
+      <!-- punto 1.2 entrega 3 -->
+
+      <div class="text-center p-4" id="commit">
+        <h3><b>Opiniones sobre el producto</b>
+          <h3>
+      </div>
+      <br>
+      <br>
+
+      <!-- punto 2 entrega 3 -->
+
+      <div class="container">
+        <div class="text-center p-4">
+          <h2>Puedes dejar tu comentario respecto al producto aquí:</h2>
+        </div>
+        <div class="row justify-content-md-center">
+          <div class="col-md-8 order-md-1">
+            <form class="needs-validation">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input type="text" class="form-control" placeholder="comentario" value="">
+                </div>
+              </div>
+              <br>
+              <select name="puntaje">
+                <option value="0" selected disabled hidden>Selecciona un puntaje</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <br>
+              <br>
+              <button class="btn btn-primary btn-lg" type="submit">Enviar</button>
+            </form>
+          </div>
   </main>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>

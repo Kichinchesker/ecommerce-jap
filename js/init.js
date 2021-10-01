@@ -48,3 +48,13 @@ document.addEventListener("DOMContentLoaded", function(e){
   document.getElementById("printUser").innerHTML = userName;
   // Punto 3 Entrega 2
 });
+
+document.addEventListener("DOMContentLoaded", function(e){
+    
+  document.getElementById("deleteUser").onclick = function(e) {
+      sessionStorage.clear();
+      
+      // Entrega 4 pauta grupal "cerrar sesion y eliminar usuario autenticado"
+  }
+
+});
