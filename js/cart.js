@@ -22,7 +22,7 @@ function validarCarrito() {
         )
 
             .then(function () {
-                window.location.href = "/C:/Users/leand/OneDrive/Escritorio/Proyecto/Obligatorio/ecommerce-jap/home.html";
+                window.location.href = "./home.html";
 
             });
 }
